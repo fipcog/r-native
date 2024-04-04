@@ -10,7 +10,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>{state}</Text>
       <TextInput style={styles.input} value={state} onChangeText={setstate} />
-      <StatusBar style="auto" />
+      <StatusBar style="dark" backgroundColor='#2cd3cb' />
     </View>
   );
 }
