@@ -39,6 +39,7 @@ export default function App() {
         <Tab.Screen name='Topics' component={TopicsScreen} />
         <Tab.Screen name='Questions' component={QuestionsScreen} />
       </NavigationContainer>
+      <StatusBar style="dark" backgroundColor='#2cd3cb' />
     </SafeAreaProvider>
   );
 }
