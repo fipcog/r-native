@@ -1,3 +1,4 @@
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { useRef, useState } from 'react';
@@ -28,11 +29,15 @@ export const QuestionsScreen = () => {
   )
 }
 
+const Tab = createMaterialTopTabNavigator();
+
 export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-
+        <Tab.Screen name='Main' component={MainScreen} />
+        <Tab.Screen name='Topics' component={TopicsScreen} />
+        <Tab.Screen name='Questions' component={QuestionsScreen} />
       </NavigationContainer>
     </SafeAreaProvider>
   );
@@ -54,3 +59,4 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
   }
 });
+
