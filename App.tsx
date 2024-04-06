@@ -4,16 +4,23 @@ import { StatusBar } from 'expo-status-bar';
 import { useRef, useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { RootStackParamList } from './AppNavigatorTypes';
 
-export const MainScreen = () => {
+export const MainScreen = ({ navigation }: any) => {
   return (
     <SafeAreaView>
-      <Text>Main</Text>
+      <View
+        style={styles.container}
+      >
+        <Text>Main</Text>
+        <Text>Main</Text>
+      </View>
+
     </SafeAreaView>
   )
 }
 
-export const TopicsScreen = () => {
+export const TopicsScreen = ({ navigation }: any) => {
   return (
     <SafeAreaView>
       <Text>Topics</Text>
@@ -21,7 +28,7 @@ export const TopicsScreen = () => {
   )
 }
 
-export const QuestionsScreen = () => {
+export const QuestionsScreen = ({ navigation }: any) => {
   return (
     <SafeAreaView>
       <Text>Questions</Text>
@@ -29,15 +36,20 @@ export const QuestionsScreen = () => {
   )
 }
 
-const Tab = createMaterialTopTabNavigator();
+const Tab = createMaterialTopTabNavigator<RootStackParamList>();
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Tab.Screen name='Main' component={MainScreen} />
-        <Tab.Screen name='Topics' component={TopicsScreen} />
-        <Tab.Screen name='Questions' component={QuestionsScreen} />
+        <Tab.Navigator
+          screenOptions={{
+            tabBarIndicatorStyle: { backgroundColor: '#1ecbe9' },
+          }}>
+          <Tab.Screen name='Main' component={MainScreen} />
+          <Tab.Screen name='Topics' component={TopicsScreen} />
+          <Tab.Screen name='Questions' component={QuestionsScreen} />
+        </Tab.Navigator>
       </NavigationContainer>
       <StatusBar style="dark" backgroundColor='#2cd3cb' />
     </SafeAreaProvider>
@@ -46,10 +58,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    // flex: 1,
+    height: '100%',
+    // backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   input: {
     width: 300,
