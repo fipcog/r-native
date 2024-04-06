@@ -7,6 +7,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { MainProps, QuestionsProps, RootStackParamList, TopicsProps } from './AppNavigatorTypes';
 
 export const MainScreen = ({ navigation }: MainProps) => {
+  const onClock = () => navigation.navigate('Topics')
   return (
     <SafeAreaView>
       <View
