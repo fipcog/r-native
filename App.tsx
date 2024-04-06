@@ -4,9 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 import { useRef, useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { RootStackParamList } from './AppNavigatorTypes';
+import { MainProps, QuestionsProps, RootStackParamList, TopicsProps } from './AppNavigatorTypes';
 
-export const MainScreen = ({ navigation }: any) => {
+export const MainScreen = ({ navigation }: MainProps) => {
   return (
     <SafeAreaView>
       <View
@@ -20,7 +20,7 @@ export const MainScreen = ({ navigation }: any) => {
   )
 }
 
-export const TopicsScreen = ({ navigation }: any) => {
+export const TopicsScreen = ({ navigation }: TopicsProps) => {
   return (
     <SafeAreaView>
       <Text>Topics</Text>
@@ -28,7 +28,7 @@ export const TopicsScreen = ({ navigation }: any) => {
   )
 }
 
-export const QuestionsScreen = ({ navigation }: any) => {
+export const QuestionsScreen = ({ navigation }: QuestionsProps) => {
   return (
     <SafeAreaView>
       <Text>Questions</Text>
