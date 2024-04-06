@@ -1,12 +1,11 @@
+//https://stackoverflow.com/questions/52197057/material-top-tab-navigator-overlapping-with-statusbar-any-way-to-fix-it
+import Constants from 'expo-constants'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { useRef, useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { MainProps, QuestionsProps, RootStackParamList, TopicsProps } from './AppNavigatorTypes';
-//https://stackoverflow.com/questions/52197057/material-top-tab-navigator-overlapping-with-statusbar-any-way-to-fix-it
-import Constants from 'expo-constants'
+import { MainProps, QuestionsProps, RootStackParamList, TopicsProps } from './types/appNavigatorTypes';
 import { CustomButton } from './components/CustomButton/CustomButton';
 
 export const MainScreen = ({ navigation }: MainProps) => {
