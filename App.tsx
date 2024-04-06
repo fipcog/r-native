@@ -3,7 +3,7 @@ import Constants from 'expo-constants'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Switch, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { MainProps, QuestionsProps, RootStackParamList, TopicsProps } from './types/appNavigatorTypes';
 import { CustomButton } from './components/CustomButton/CustomButton';
@@ -14,7 +14,7 @@ export const MainScreen = ({ navigation }: MainProps) => {
   return (
     <View style={styles.container}>
       <CustomButton
-        onPress={onStartPress}
+        // onPress={onStartPress}
         btnStyles={styles.startBtn}
         textStyles={styles.startBtnText}
         title='START'

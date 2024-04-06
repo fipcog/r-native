@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
+import { Pressable, StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 
 type Props = {
   btnStyles?: ViewStyle
@@ -9,9 +9,9 @@ type Props = {
 
 export const CustomButton = ({ onPress, textStyles, btnStyles, title }: Props) => {
   return (
-    <Pressable onPress={onPress} style={[styles.Button, btnStyles]}>
+    <TouchableOpacity onPress={onPress} style={[styles.Button, btnStyles]}>
       <Text style={[styles.BtnText, textStyles]}>{title}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 }
 
