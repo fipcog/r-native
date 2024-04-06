@@ -5,35 +5,31 @@ import { useRef, useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { MainProps, QuestionsProps, RootStackParamList, TopicsProps } from './AppNavigatorTypes';
+//https://stackoverflow.com/questions/52197057/material-top-tab-navigator-overlapping-with-statusbar-any-way-to-fix-it
+import Constants from 'expo-constants'
 
 export const MainScreen = ({ navigation }: MainProps) => {
   const onClock = () => navigation.navigate('Topics')
   return (
-    <SafeAreaView>
-      <View
-        style={styles.container}
-      >
-        <Text>Main</Text>
-        <Text>Main</Text>
-      </View>
-
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Text>1</Text>
+    </View>
   )
 }
 
 export const TopicsScreen = ({ navigation }: TopicsProps) => {
   return (
-    <SafeAreaView>
+    <View>
       <Text>Topics</Text>
-    </SafeAreaView>
+    </View>
   )
 }
 
 export const QuestionsScreen = ({ navigation }: QuestionsProps) => {
   return (
-    <SafeAreaView>
+    <View>
       <Text>Questions</Text>
-    </SafeAreaView>
+    </View>
   )
 }
 
@@ -44,6 +40,7 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Tab.Navigator
+          style={{ marginTop: Constants.statusBarHeight }}
           screenOptions={{
             tabBarIndicatorStyle: { backgroundColor: '#1ecbe9' },
           }}>
@@ -61,7 +58,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     height: '100%',
-    // backgroundColor: '#fff',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
