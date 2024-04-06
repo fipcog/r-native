@@ -2,17 +2,23 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { useRef, useState } from 'react';
-import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { MainProps, QuestionsProps, RootStackParamList, TopicsProps } from './AppNavigatorTypes';
 //https://stackoverflow.com/questions/52197057/material-top-tab-navigator-overlapping-with-statusbar-any-way-to-fix-it
 import Constants from 'expo-constants'
+import { CustomButton } from './components/CustomButton/CustomButton';
 
 export const MainScreen = ({ navigation }: MainProps) => {
-  const onClock = () => navigation.navigate('Topics')
+  const onStartPress = () => navigation.navigate('Topics')
   return (
     <View style={styles.container}>
-      <Text>1</Text>
+      <CustomButton
+        onPress={onStartPress}
+        btnStyles={styles.startBtn}
+        textStyles={styles.startBtnText}
+        title='START'
+      />
     </View>
   )
 }
@@ -42,7 +48,7 @@ export default function App() {
         <Tab.Navigator
           style={{ marginTop: Constants.statusBarHeight }}
           screenOptions={{
-            tabBarIndicatorStyle: { backgroundColor: '#1ecbe9' },
+            tabBarIndicatorStyle: { backgroundColor: '#2cd3cb' },
           }}>
           <Tab.Screen name='Main' component={MainScreen} />
           <Tab.Screen name='Topics' component={TopicsScreen} />
@@ -60,7 +66,7 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   input: {
     width: 300,
@@ -69,6 +75,12 @@ const styles = StyleSheet.create({
     borderColor: '#000000',
     borderWidth: 1,
     borderStyle: 'solid',
+  },
+  startBtn: {
+    backgroundColor: '#2cd3cb',
+  },
+  startBtnText: {
+
   }
 });
 
