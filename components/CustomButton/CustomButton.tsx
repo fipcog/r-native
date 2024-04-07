@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
+import { Pressable, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableOpacity, ViewStyle } from "react-native";
 
 type Props = {
   btnStyles?: ViewStyle
